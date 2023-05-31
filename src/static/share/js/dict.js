@@ -38,4 +38,8 @@ const dict_cn2en = {
     '关闭': 'Close',
     '序号': 'Serial Num.',
     '留言': 'Words',
+    '输入用户名': 'Input Username',
+    '输入密码': 'Input Password',
+    '确认密码': 'Confirm Password',
+    
 };
