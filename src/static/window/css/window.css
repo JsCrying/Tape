@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.chat-header {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.chat-box {
+	background-color: #F5F5F5;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.message-list {
+	position: relative;
+	height: 300px;
+	overflow-y: scroll;
+}
+.message-list .message-content {
+	display: inline-block;
+	max-width: 300px;
+	word-wrap: break-word;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.5);
+	padding: 0.1em 0.2em 0.1em 0.1em;
+}
+.message-list .hint {
+	color: gray;
+	font-size: 2px;
+	text-align: center;
+}
+.message {
+	margin-bottom: 15px;
+	display: grid;
+	grid-template-columns: 1fr 9fr;
+	grid-template-areas: 
+		'a b'
+		'a c'
+		'a d'
+	;
+}
+.message span:nth-child(1) {
+	grid-area: a;
+}
+.message span:nth-child(2) {
+	margin-top: 3.8px;
+}
+.message span:nth-child(3) {
+	margin-top: 0.5em;
+}
+.message-sender {
+	font-weight: bold;
+}
+
+.message-timestamp {
+	font-size: 0.8rem;
+	color: #888;
+}
+
+.message-image {
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+.message-input {
+	margin-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.message-input form {
+	display: flex;
+	flex-grow: 1;
+}
+
+.message-input input[type="text"], .message-input input[type="file"] {
+	flex-grow: 1;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+}
+
+.message-input button {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #3f51b5;
+	color: #fff;
+	border: none;
+	margin-left: 10px;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.message-input button:hover {
+	background-color: #2c387e;
+}
+#message-form {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+#message-form input {
+  	cursor: pointer;
+}
+#message-form #message {
+  	cursor: auto;
+}
+#message-form label {
+	width: 3em;
+	margin-left: 0.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #eee;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: .3s;
+}
+#message-form label:hover {
+	background: gray;
+}
+/* @media (max-width: 435px) {
+
+} */

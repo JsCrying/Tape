@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" type="image/png" href="../static/login/images/icons/favicon.ico"/>
+    
+    <link rel="stylesheet" type="text/css" href="../static/source/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/source/vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="../static/login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../static/login/css/main.css">
+	<link rel="stylesheet" type="text/css" href="../static/share/language.css">
+
+</head>
+<body>
+	
+	<div class="limiter">
+		 <div class="container-login100" style="background-color: #f1f1f1;">
+			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
+				<div class="language">
+					<label>
+						<input type="checkbox" class="language-selection" id="language_selection">
+						<div class="language-btn">
+							<span class="btn-cn">CN</span>
+							<span class="btn-en">EN</span>
+						</div>
+					</label>
+				</div>
+				<form action="/login" method="post" class="login100-form validate-form flex-sb flex-w">
+					<span class="login100-form-title p-b-10 translate-innerhtml" la="用户登录">
+						用户登录
+					</span>
+
+					<a href="/" class="btn-face m-b-20">
+						<img src="../static/login/images/house-solid.svg">
+						<span class="translate-innerhtml" la="返回主页">返回主页</span>
+					</a>
+
+					<a href="https://github.com/JsCrying/Tape" class="btn-face m-b-20">
+						<img src="../static/login/images/github.png">
+						<span class="translate-innerhtml" la="GitHub主页">GitHub主页</span>
+					</a>
+					
+					<div class="p-t-10 p-b-9">
+						<span class="txt1 translate-innerhtml" la="用户名">
+							用户名
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Username is required">
+						<input class="input100" type="text" name="username" >
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="p-t-13 p-b-9">
+						<span class="txt1 translate-innerhtml" la="密码">
+							密码
+						</span>
+					</div>
+					<div class="wrap-input100 validate-input" data-validate = "Password is required">
+						<input class="input100" type="password" name="pass" >
+						<span class="focus-input100"></span>
+					</div>
+					<div class="p-t-13 p-b-9">
+						<span class="txt1 translate-innerhtml" la="语言">
+							语言
+						</span>
+						<select name="checkbox" id="checkbox" class="checkbox">
+							<option value="CN">CN</option>
+							<option value="EN">EN</option>
+						</select>
+						<!-- <input class="input100 checkbox" type="checkbox" name="checkbox" > -->
+					</div>
+					<div class="wrap-input100" style="height: 0px;">
+					</div>
+					<div class="p-t-13 p-b-9">
+						<span class="txt1 translate-innerhtml" la="{{ msg }}" style="color: red;">
+							{{ msg }}
+						</span>
+					</div>
+					<div class="container-login100-form-btn m-t-17">
+						<button class="login100-form-btn translate-innerhtml" la="登录">
+							登录
+						</button>
+						<a href="/register" class="login100-form-btn translate-innerhtml" la="注册" target="_blank">
+							注册
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="../static/share/js/dict.js"></script>
+<script src="../static/login/js/translate.js"></script>
+<script src="../static/source/vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="../static/source/vendor/animsition/js/animsition.min.js"></script>
+<script src="../static/source/js/main.js"></script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <!--===============================================================================================-->	
+	    <link rel="icon" type="image/png" href="../static/chores/favicon.ico"/>
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="../static/source/vendor/bootstrap/css/bootstrap.min.css">
+        <link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+        <link rel="stylesheet" href="../static/user/css/googleapis.css">
+        <link rel="stylesheet" href="../static/user/css/user.css">
+        <link rel="stylesheet" href="../static/user/css/util.css">
+        <link rel="stylesheet" href="../static/user/css/userform.css">
+
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-admin">
+            <div class="formalign" id="formalign" style="display: none;">
+                <!--  -->
+                <form method="post" action="/submit" id="submitForm" name="survey-form">
+                    <div class="text-center">
+                        <span class="translate-innerhtml" la="写一笔">写一笔</span>
+                    </div>
+                    <input type="hidden" id="id" name="id"/>
+                    <input type="hidden" id="username" name="username">
+                    <div class="formblock">
+                        <label>
+                            <div class="translate-innerhtml" la="想说的话">想说的话</div>
+                            <textarea class="bigtext translate-innerhtml" la="无" type="text" id="words" name="words" autocomplete="off">无</textarea>
+                        </label>
+                    </div>
+                    <input type="hidden" id="date" name="date"/>
+                    <input type="hidden" id="sqlType" name="sqlType"/>
+                    <div class="mainbtn">
+                        <button id="submitScore" type="submit" class="btn translate-innerhtml" la="提交">提交</button>
+                        <button id="submitReset" type="reset" class="btn translate-innerhtml" la="关闭">关闭</button>
+                    </div>
+                </form>
+            </div>
+            <div class="wrap-admin">
+                <header>
+                    <div id="logo" data-language="{{ language }}" data-username="{{ username }}">
+                        Tape
+                    </div>
+                    <ul>
+                        <li><a href="/logout" class='active translate-innerhtml' la="退出登录" id="logout">退出登录</a></li>
+                        <li><a href="/chat" target="_blank" class="translate-innerhtml" la="交流">交流</a></li>
+                        <li><a href="/wall" class="translate-innerhtml" la="表白墙">表白墙</a></li>
+                    </ul>
+                </header>
+                <section>
+                    <img src="../static/user/images/stars.png" alt="" id="stars">
+                    <img src="../static/user/images/moon.png" alt="" id="moon">
+                    <img src="../static/user/images/mountains_behind.png" alt="" id="mountain_behind">
+                    <div id="text">Hi {{ username }}</div>
+                    <button id="btn" class="translate-innerhtml" la="写一笔">写一笔</button>
+                    <img src="../static/user/images/mountains_front.png" alt="" id="mountain_front">
+                </section>
+                <div id="published">
+                    <div class="wrap-audit">
+                        <h4 class="translate-innerhtml" la="已发布信息">已发布信息</h4>
+                        <div class="container-audit">
+                            <table class="content">
+
+                            </table>
+                            <ul class="pagination"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+ <script src="../static/share/js/dict.js"></script>
+ <script src="../static/user/js/translate.js"></script>
+<!-- 字幕移动 -->
+<script>
+    function $(id){
+        return document.getElementById(id);
+    }
+
+    let stars=$('stars');
+    let moon=$('moon');
+    let mountain_behind=$('mountain_behind');
+    let text=$('text');
+    let btn=$('btn');
+    let mountain_front=$('mountain_front');
+
+    window.addEventListener('scroll', function() {
+        let value=window.scrollY;
+        let wh=window.innerHeight;
+        //console.log(value);
+        stars.style.left=value*0.25+'px';
+        moon.style.top=value*1.2+'px';
+        mountain_behind.style.top=value*0.5+'px';
+        // text.style.marginRight=value*8+'px';
+        // text.style.marginTop=value*0.5+'px';
+        text.style.left=(100.0-value/wh*100)+'%';
+        btn.style.marginRight=value*1.5+'px';
+        btn.style.marginTop=value*0.8+'px';
+    })
+</script>
+<script src="../static/user/js/userform.js"></script>
+<script src="../static/user/js/usersubmit.js"></script>

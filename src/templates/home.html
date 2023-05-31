@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../static/share/favicon.ico"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/home/css/home.css">
+    <link rel="stylesheet" href="../static/home/css/util.css">
+    <link rel="stylesheet" href="../static/share/language.css">
+
+    <title>Tape</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="brand">
+                    Tape
+                </a>
+                <span id="info" class="translate-innerhtml" la="{{ msg }}">
+                    {{ msg }}
+                </span>
+                <ul class="menu">
+                    <li><a href="/wall" class="translate-innerhtml" la="查看成绩">表白墙</a></li>
+                    <li><a href="/login" class="translate-innerhtml" la="用户登录">用户登录</a></li>
+                    <li><label><input type="checkbox" id="language_selection"><span>CN/EN</span></label></li>
+                    <li><a href="#tutorials" class="translate-innerhtml" la="其他友链">其他友链</a></li>
+                    <li class="btn-list-item">
+                        <a href="/chat" class="btn btn-primary translate-innerhtml" la="匿名交流">
+                            匿名交流
+                        </a>
+                    </li>
+                </ul>
+                <div class="buttons">
+                    <a href="/chat" class="btn btn-primary translate-innerhtml" la="匿名交流">
+                        匿名交流
+                    </a>
+                </div>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <div class="header-body">
+                <div class="header-text">
+                    <div>
+                        <h1 class="title">
+                            <div class="translate-innerhtml" la="Tape">Tape</div>
+                        </h1>
+                        <p class="quote translate-innerhtml" la="“重要的不是强风而是勇气，">
+                            “重要的不是强风而是勇气，
+                        </p>
+                        <p class="quote translate-innerhtml" la="是它让你们成为世上最初的飞鸟。”">
+                            是它让你们成为世上最初的飞鸟。”
+                        </p>
+                        <div class="buttons">
+                            <a href="/chat" class="btn btn-primary translate-innerhtml" la="匿名交流" target="_blank">
+                                匿名交流
+                            </a>
+                            <a href="https://github.com/JsCrying/Tape" class="btn btn-secondary translate-innerhtml" la="关于我们" target="_blank">
+                                关于我们
+                            </a>
+                        </div>
+                        <div class="stats">
+                            <div>
+                                <h2 class="counter" data-count="100">
+                                    100+
+                                </h2>
+                                <p class="translate-innerhtml" la="网站用户">网站用户</p>
+                            </div>
+                            <div class="line"></div>
+                            <div>
+                                <h2 class="counter" data-count="500">
+                                    500+
+                                </h2>
+                                <p class="translate-innerhtml" la="墙上留言">墙上留言</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner">
+                    <img src="../static/home/images/card1.jpg" alt="banner">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cards">
+        <a name="tutorials"></a>
+        <div class="container">
+            <div class="card" style="--i: 0;">
+                <img src="../static/home/images/lovewall.png" alt="analytics">
+                <div class="card-text">
+                    <h3>LoveWall</h3>
+                    <p class="translate-innerhtml" la="横跨在你和你的梦想之间的唯一的东西就是奋力拼搏。">
+                        The only thing standing between you and your dreams is a lot of hard work. 横跨在你和你的梦想之间的唯一的东西就是奋力拼搏。
+                    </p>
+                    <a href="https://www.lovewall.cc/" target="_blank">
+                        <span class="translate-innerhtml" la="前往">前往</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card" style="--i: 2;">
+                <!-- <img src="../static/home/images/进阶篇.png" alt="analytics"> -->
+                <img src="../static/home/images/一生所爱.png" alt="analytics">
+                <div class="card-text">
+                    <h3>一生所爱</h3>
+                    <p class="translate-innerhtml" la="伤痛会改变一个人，但爱最终总会让你找回最初的自己。">
+                        Pain changes people. However, love will finally guide them back. 伤痛会改变一个人，但爱最终总会让你找回最初的自己。
+                    </p>
+                    <a href="https://bbq521.com/" target="_blank">
+                        <span class="translate-innerhtml" la="前往">前往</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card" style="--i: 4;">
+                <!-- <img src="../static/home/images/物理篇.jpg" alt="analytics"> -->
+                <img src="../static/home/images/tlmsu.png" alt="analytics">
+                <div class="card-text">
+                    <h3>Tlmsu</h3>
+                    <p class="translate-innerhtml" la="世界并没有变，改变的是我们。">
+                        Things never change, we change. 世界并没有变，改变的是我们。
+                    </p>
+                    <a href="http://bbq.igelou.com/" target="_blank">
+                        <span class="translate-innerhtml" la="前往">前往</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script src="../static/share/js/dict.js"></script>
+<script src="../static/home/js/translate.js"></script>
+<!--===============================================================================================-->
+<script src="../static/home/js/home.js"></script>
+<!--===============================================================================================-->
+<script src="../static/source/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="../static/source/js/main.js"></script>

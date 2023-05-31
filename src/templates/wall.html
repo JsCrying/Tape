@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall</title>
+    <link rel="icon" type="image/png" href="../static/share/favicon.ico"/>
+    <link rel="stylesheet" href="../static/wall/css/googleapis.css">
+    <link rel="stylesheet" type="text/css" href="../static/source/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/wall/css/wall.css">
+    <link rel="stylesheet" href="../static/wall/css/loading.css">
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-score">
+            <div class="wrap-score">
+                <div class="title">
+                    <div class="session_hint">
+                        <p>
+                            <input type="date" id="date" name="date">
+                        </p>
+                    </div>
+                    <a href="/" class="translate-innerhtml" la="返回主页">返回主页</a>
+                </div>
+                <div class="score-table" id="score-table">
+                    <div class="table-title">
+                        <div class="language">
+                            <label>
+                                <input type="checkbox" class="language-selection" id="language_selection">
+                                <div class="language-btn">
+                                    <span class="btn-cn">CN</span>
+                                    <span class="btn-en">EN</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <table class="content">
+                        </table>
+                        <ul class="pagination"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../static/share/js/dict.js"></script>
+<script src="../static/wall/js/translate.js"></script>
+<script src="../static/wall/js/fetch.js"></script>
+<script src="../static/wall/js/wall.js"></script>

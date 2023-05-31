@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="../static/window/css/window.css">
+    <title>Chat Window</title>
+</head>
+<body>
+	<div class="container">
+		<div class="chat-header">
+			<h2>Chat Window</h2>
+		</div>
+		<div class="chat-box">
+			<div class="message-list" id="message-list"></div>
+			<div class="message-input">
+				<form id="message-form">
+					<input type="text" id="message" placeholder="Type your message here...">
+					<label>
+						<div id="status"><i class="fa-solid fa-image"></i></div>
+						<input type="file" id="image" accept="image/*" style="display: none;">
+					</label>
+					<label id="cancel"><i class="fas fa-window-close"></i></label>
+					<button type="submit"><i class="fa-sharp fa-solid fa-paper-plane"></i></button>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="../static/window/js/window.js"></script>
+<script type="text/javascript" charset="utf-8">
+	// 为了解决log方法被调用时实际传入参数不确定的问题，
+	// 参数的不确定导致你方法通过常规的console.log方法来输出日志
+	const log = function() {
+		console.log.apply(console, arguments);
+	};
+	let socket;
+	let current_channel = 'Prime Sieve';
+
+	const clear_board = function() {
+		$('#message-list').val('');
+		log('Clear');
+	}
+
+	$(document).ready(function() {
+		socket = io.connect('ws://' + document.domain + ':' + location.port + '/window');
+		log('xxqqq', socket);
+
+		socket.on('connect', function() {
+			log('Connect');
+		});
+
+		socket.on('status', function(data) {
+			log(data.server_to_client);
+			const e = document.createElement('div');
+			e.classList.add('hint');
+			e.innerHTML = '&lt' + data.server_to_client + '&gt';
+			$('#message-list').append(e);
+		});
+
+		socket.on('message', function(data) {
+			log(data);
+			showMessage(data.user_name, data.msg, data.img, data.timestamp);
+		});
+
+		socket.emit(
+			'joined',
+			{
+				'client_to_server': current_channel
+			}
+		);
+		log('socket.emit joinedxxxxxxxxx');
+
+		$('#message').keypress(function(e) {
+			const code = e.keyCode || e. which;
+			if (code == 13) {
+				operateMessage();
+			}
+		});
+		
+	});
+</script>
