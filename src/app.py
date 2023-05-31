@@ -221,16 +221,6 @@ def fetch():
         'fetch_list': ret
     })
 
-
-@app.route('/load_track')
-def load_track():
-    session_number = int(request.args['session_number'])
-    track_set_list = track_set[session_number]
-    return jsonify({
-        'track_set': track_set_list
-    })
-
-
 if __name__ == '__main__':
     app.debug = True
     from routes.define_socket import chat_socketio
